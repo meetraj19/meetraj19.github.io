@@ -6,7 +6,7 @@ title: Home
 # Meetrajsinh Jadeja
 ## Machine Learning Engineer | AI Researcher | Computer Vision
 
-A  Master's Degree in Mechatronics at **University of Stuttgart** while working on cutting-edge AI projects at **IKTD Research Institute** and **Hitachi Rail**.
+A  Master's Degree in Mechatronics at **University of Stuttgart** while working on cutting-edge AI projects at **IKTD Research Institute,Universität Stuttgart** and **Hitachi Rail**.
 
 ### Recent Works
 - **Multi-Agent AI Systems** for automated Technical Drawing Analysis
@@ -14,8 +14,9 @@ A  Master's Degree in Mechatronics at **University of Stuttgart** while working 
 - **Advanced RAG Systems** with dynamic retrieval strategies for german language Specific Technical Documents
 
 ###  Technical Expertise
-**AI/ML:** LLMs, Computer Vision, Multi-Agent Systems, Deep Learning  
-**Frameworks:** PyTorch, LangChain, CrewAI, FastAPI, Docker  
+**AI/ML:** LLMs, Computer Vision, Multi-Agent Systems, Deep Learning, Machine Learning
+**Frameworks:** PyTorch, Tensorflow, LangChain, LangGraph, CrewAI
+**Production:** Github Actions CI/CD , MLops , Docker , Kubernetes
 **Cloud:** AWS (SageMaker, Bedrock), Azure ML Services  
 
 ### 🤝 Connect With Me
