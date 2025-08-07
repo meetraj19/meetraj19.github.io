@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meetrajsinh Jadeja</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #fafafa;
+            color: #333;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        /* Header */
+        .header {
+            background-color: #fafafa;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            padding: 0.25rem;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 400;
+            transition: color 0.2s ease;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-menu a:hover {
+            color: #333;
+        }
+        
+        /* Main Content */
+        .main-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            min-height: calc(100vh - 200px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 2rem;
+            border: 3px solid #e5e5e5;
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .profile-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .profile-title {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: transparent;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #666;
+            font-size: 1.2rem;
+            transition: all 0.2s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: #333;
+            color: white;
+            border-color: #333;
+            transform: translateY(-1px);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #fafafa;
+            border-top: 1px solid #e5e5e5;
+            padding: 2rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .footer a {
+            color: #666;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: #333;
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-menu {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .main-container {
+                padding: 2rem 1rem;
+            }
+            
+            .profile-name {
+                font-size: 2rem;
+            }
+            
+            .profile-title {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+            
+            .social-links {
+                gap: 0.75rem;
+            }
+            
+            .social-links a {
+                width: 36px;
+                height: 36px;
+                font-size: 1.1rem;
+            }
+        }
+        
+        /* Additional pages styling (hidden by default) */
+        .page-content {
+            display: none;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: calc(100vh - 200px);
+        }
+        
+        .page-content.active {
+            display: block;
+        }
+        
+        .page-content h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 1rem;
+        }
+        
+        .page-content h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            margin: 2rem 0 1rem 0;
+        }
+        
+        .page-content p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .page-content ul {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+        
+        .page-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease;
+        }
+        
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo" onclick="showHome()">
+                Meetrajsinh Jadeja
+                <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#" onclick="showPage('posts')">Posts</a></li>
+                <li><a href="#" onclick="showPage('projects')">Projects</a></li>
+                <li><a href="#" onclick="showPage('experience')">Experience</a></li>
+                <li><a href="#" onclick="showPage('about')">About</a></li>
+                <li><a href="#" onclick="showPage('cv')">CV ↗</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home/Landing Page -->
+    <main class="main-container" id="home-content">
+        <img src="https://via.placeholder.com/120x120/666666/ffffff?text=MJ" alt="Meetrajsinh Jadeja" class="profile-image">
+        <h1 class="profile-name">Meetrajsinh Jadeja</h1>
+        <p class="profile-title">Machine Learning Engineer | AI Researcher | Computer Vision | LLMs</p>
+        
+        <div class="social-links">
+            <a href="https://linkedin.com/in/meetrajsinh-jadeja-04601a186" target="_blank" title="LinkedIn">📧</a>
+            <a href="https://github.com/meetraj19" target="_blank" title="GitHub">💻</a>
+            <a href="https://medium.com/@meetrajj19" target="_blank" title="Medium">✍️</a>
+            <a href="mailto:meetrajsinh19.de@gmail.com" title="Email">📬</a>
+        </div>
+    </main>
+
+    <!-- About Page -->
+    <div class="page-content" id="about-content">
+        <h1>About Me</h1>
+        <p>I'm a passionate <strong>Machine Learning Engineer</strong> and <strong>AI Researcher</strong> with deep expertise in Large Language Models (LLMs), Computer Vision, and Generative AI. Currently pursuing my Master's degree in Mechatronics at the University of Stuttgart with a focus on Machine Learning and Software Engineering.</p>
+        
+        <h2>Current Work</h2>
+        <ul>
+            <li><strong>Machine Learning Research Assistant</strong> at IKTD - University of Stuttgart</li>
+            <li><strong>Computer Vision Engineer</strong> at Hitachi Rail</li>
+            <li>Developing multi-agent AI systems for technical analysis</li>
+            <li>Building advanced RAG systems with dynamic retrieval strategies</li>
+        </ul>
+
+        <h2>Research Interests</h2>
+        <ul>
+            <li>Large Language Models and Fine-tuning</li>
+            <li>Multi-Agent AI Systems</li>
+            <li>Computer Vision for Transportation</li>
+            <li>Retrieval-Augmented Generation</li>
+            <li>Autonomous Vehicle Technologies</li>
+        </ul>
+
+        <h2>Education</h2>
+        <p><strong>M.Sc. Mechatronics</strong> - University of Stuttgart (In Progress)<br>
+        Focus: Software Engineering and Machine Learning</p>
+        
+        <p><strong>B.Sc. Mechanical Engineering</strong> - L.D College of Engineering (2016-2020)<br>
+        Thesis: Development of Automated Control Systems</p>
+    </div>
+
+    <!-- Projects Page -->
+    <div class="page-content" id="projects-content">
+        <h1>Projects</h1>
+        
+        <h2>AI Transportation Planning System</h2>
+        <p>A sophisticated multi-agent AI system that revolutionizes freight transport planning by analyzing historical projects and generating optimal solutions for new requests.</p>
+        <p><strong>Technologies:</strong> CrewAI, Machine Learning, OCR, NLP, FastAPI</p>
+        <p><a href="https://github.com/meetraj19/AI_Transport_planner" class="btn" target="_blank">View Project</a></p>
+        
+        <h2>AI Voice Chatbot System</h2>
+        <p>A production-ready AI voice chatbot designed for seamless phone call interactions with enterprise-grade reliability and natural conversation capabilities.</p>
+        <p><strong>Technologies:</strong> Twilio, Deepgram, OpenAI GPT-4, ElevenLabs, WebSocket</p>
+        <p><a href="https://github.com/meetraj19/Voice_ChatbotMJ" class="btn" target="_blank">View Project</a></p>
+        
+        <h2>Advanced RAG System</h2>
+        <p>A comprehensive RAG system that spans from data ingestion to context-optimized response generation, built during research at IKTD - University of Stuttgart.</p>
+        <p><strong>Technologies:</strong> LangChain, Vector Databases, Custom Embeddings, Dynamic Retrieval</p>
+    </div>
+
+    <!-- Experience Page -->
+    <div class="page-content" id="experience-content">
+        <h1>Experience</h1>
+        
+        <h2>Machine Learning Research Assistant</h2>
+        <p><strong>IKTD - University of Stuttgart</strong> | Aug 2023 - Mar 2025</p>
+        <ul>
+            <li>Developed comprehensive RAG systems with state-of-the-art embeddings and dynamic retrieval strategies</li>
+            <li>Fine-tuned LLaMA 2 using LoRA techniques on custom institutional datasets</li>
+            <li>Built multi-agent AI systems for technical drawing analysis and feedback generation</li>
+            <li>Implemented MLOps practices with FastAPI and AWS SageMaker deployment</li>
+        </ul>
+        
+        <h2>Computer Vision Engineer (Working Student)</h2>
+        <p><strong>Hitachi Rail</strong> | Feb 2024 - Jan 2025</p>
+        <ul>
+            <li>Designed and trained computer vision models for railway safety systems</li>
+            <li>Developed foundation models for object detection and segmentation</li>
+            <li>Implemented Large Vision Models (LVM) for prompt-based object detection</li>
+            <li>Created end-to-end Visual SLAM pipelines for autonomous train systems</li>
+        </ul>
+    </div>
+
+    <!-- Posts Page -->
+    <div class="page-content" id="posts-content">
+        <h1>Blog Posts</h1>
+        <p>Here are some of my recent writings on AI, machine learning, and technology:</p>
+        
+        <h2>Recent Articles</h2>
+        <ul>
+            <li><a href="https://medium.com/@meetrajj19/are-vision-language-models-ready-for-autonomous-driving-a-critical-analysis-d6787db502ce" target="_blank">Are Vision-Language Models Ready for Autonomous Driving? A Critical Analysis</a></li>
+            <li><a href="https://medium.com/@meetrajj19" target="_blank">More articles on Medium →</a></li>
+        </ul>
+    </div>
+
+    <!-- CV Page -->
+    <div class="page-content" id="cv-content">
+        <h1>Curriculum Vitae</h1>
+        <p>For a complete overview of my professional background, please download my CV or view it online.</p>
+        <p><a href="#" class="btn">Download CV (PDF)</a></p>
+        
+        <h2>Quick Overview</h2>
+        <p><strong>Education:</strong> M.Sc. Mechatronics (University of Stuttgart), B.Sc. Mechanical Engineering</p>
+        <p><strong>Experience:</strong> 2+ years in Machine Learning and AI Research</p>
+        <p><strong>Specializations:</strong> LLMs, Computer Vision, Multi-Agent Systems, MLOps</p>
+        <p><strong>Languages:</strong> German (C1), English (Business Fluent)</p>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 Meetrajsinh Jadeja. Powered by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a></p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all content
+            document.getElementById('home-content').style.display = 'none';
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            const targetPage = document.getElementById(pageId + '-content');
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+        }
+        
+        function showHome() {
+            document.getElementById('home-content').style.display = 'flex';
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active'));
+        }
+        
+        function toggleTheme() {
+            const body = document.body;
+            const isDark = body.style.backgroundColor === 'rgb(26, 26, 26)' || body.style.backgroundColor === '#1a1a1a';
+            
+            if (isDark) {
+                // Switch to light theme
+                body.style.backgroundColor = '#fafafa';
+                body.style.color = '#333';
+                document.querySelector('.header').style.backgroundColor = '#fafafa';
+                document.querySelector('.footer').style.backgroundColor = '#fafafa';
+                document.querySelector('.theme-toggle').textContent = '🌙';
+            } else {
+                // Switch to dark theme
+                body.style.backgroundColor = '#1a1a1a';
+                body.style.color = '#e5e5e5';
+                document.querySelector('.header').style.backgroundColor = '#1a1a1a';
+                document.querySelector('.footer').style.backgroundColor = '#1a1a1a';
+                document.querySelector('.theme-toggle').textContent = '☀️';
+            }
+        }
+    </script>
+</body>
+</html>
+
