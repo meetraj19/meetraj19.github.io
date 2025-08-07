@@ -1,0 +1,11 @@
+title: Meetrajsinh Jadeja
+email: meetrajsinh19.de@gmail.com
+description: Machine Learning Engineer | AI Researcher | Computer Vision
+url: "https://meetraj19.github.io"
+baseurl: ""
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+github_username: meetraj19
+linkedin_username: meetrajsinh-jadeja-04601a186
