@@ -19,7 +19,6 @@
             font-size: 16px;
         }
         
-        /* Header */
         .header {
             background-color: #fafafa;
             border-bottom: 1px solid #e5e5e5;
@@ -81,7 +80,6 @@
             color: #333;
         }
         
-        /* Main Content */
         .main-container {
             max-width: 1000px;
             margin: 0 auto;
@@ -153,7 +151,6 @@
             transform: translateY(-1px);
         }
         
-        /* Footer */
         .footer {
             background-color: #fafafa;
             border-top: 1px solid #e5e5e5;
@@ -172,7 +169,6 @@
             color: #333;
         }
         
-        /* Mobile responsiveness */
         @media (max-width: 768px) {
             .nav-container {
                 padding: 1rem;
@@ -210,7 +206,6 @@
             }
         }
         
-        /* Additional pages styling (hidden by default) */
         .page-content {
             display: none;
             max-width: 800px;
@@ -236,7 +231,7 @@
             font-size: 1.5rem;
             font-weight: 600;
             color: #333;
-            margin: 2rem 0 1rem 0;
+            margin: 2rem 0 0.25rem 0;
         }
         
         .page-content p {
@@ -270,6 +265,16 @@
         .btn:hover {
             background-color: #555;
         }
+
+        .exp-meta {
+            color: #888;
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .exp-block {
+            margin-bottom: 2.5rem;
+        }
     </style>
 </head>
 <body>
@@ -280,20 +285,20 @@
                 <button class="theme-toggle" onclick="toggleTheme()">☀️</button>
             </a>
             <ul class="nav-menu">
-                <li><a href="#" onclick="showPage('posts')">Posts</a></li>
-                <li><a href="#" onclick="showPage('projects')">Projects</a></li>
-                <li><a href="#" onclick="showPage('experience')">Experience</a></li>
                 <li><a href="#" onclick="showPage('about')">About</a></li>
+                <li><a href="#" onclick="showPage('experience')">Experience</a></li>
+                <li><a href="#" onclick="showPage('projects')">Projects</a></li>
+                <li><a href="#" onclick="showPage('posts')">Posts</a></li>
                 <li><a href="#" onclick="showPage('cv')">CV ↗</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Home/Landing Page -->
+    <!-- Home -->
     <main class="main-container" id="home-content">
         <img src="./profile.jpeg" alt="Meetrajsinh Jadeja" class="profile-image">
         <h1 class="profile-name">Meetrajsinh Jadeja</h1>
-        <p class="profile-title">Machine Learning Engineer | AI Researcher | Computer Vision | LLMs</p>
+        <p class="profile-title">Machine Learning Engineer | Agentic AI | LLMs | Computer Vision</p>
         
         <div class="social-links">
             <a href="https://linkedin.com/in/meetrajsinh-jadeja-04601a186" target="_blank" title="LinkedIn">📧</a>
@@ -303,109 +308,103 @@
         </div>
     </main>
 
-    <!-- About Page -->
+    <!-- About -->
     <div class="page-content" id="about-content">
         <h1>About Me</h1>
-        <p>A Learned <strong>Machine Learning Engineer</strong> and <strong>AI Researcher</strong> with deep expertise in Large Language Models (LLMs), Computer Vision, and Generative AI. A Master's degree in Mechatronics at the University of Stuttgart with a focus on Machine Learning and Software Engineering.</p>
-        
-        <h2>Recent Work</h2>
-        <ul>
-            <li><strong>Machine Learning Research Assistant</strong> at IKTD - University of Stuttgart</li>
-            <li><strong>Computer Vision Engineer</strong> at Hitachi Rail</li>
-            <li>Developing multi-agent AI systems for technical analysis</li>
-            <li>Building advanced RAG systems with dynamic retrieval strategies</li>
-        </ul>
+        <p>ML Engineer building agentic AI systems that ship to production. Currently at <strong>JUNE GmbH</strong> in Munich, designing multi-agent workflows for legal case management used by major international law firms and corporations.</p>
+        <p>M.Sc. Mechatronics from the University of Stuttgart. I work across the full stack — from LLM orchestration and agent design to .NET backends and Angular frontends, deployed on Azure.</p>
 
-        <h2>Research Interests</h2>
+        <h2>Core Skills</h2>
         <ul>
-            <li>Large Language Models and Fine-tuning</li>
-            <li>Multi-Agent AI Systems</li>
-            <li>Computer Vision for Transportation</li>
-            <li>Retrieval-Augmented Generation</li>
-            <li>Autonomous Vehicle Technologies</li>
+            <li>Agentic AI &amp; Multi-Agent Systems (LangGraph, CrewAI, MCP)</li>
+            <li>LLMs — fine-tuning, RAG, guardrails, self-hosted inference</li>
+            <li>Computer Vision &amp; Foundation Models</li>
+            <li>Full-Stack — Python, .NET, TypeScript/Angular</li>
+            <li>Cloud — Azure AI, AWS, Docker, Kubernetes</li>
         </ul>
     </div>
 
-    <!-- Projects Page -->
+    <!-- Experience -->
+    <div class="page-content" id="experience-content">
+        <h1>Experience</h1>
+        
+        <div class="exp-block">
+            <h2>AI Developer — JUNE GmbH</h2>
+            <p class="exp-meta">Munich &middot; Jan 2026 – Present</p>
+            <p>Building the agentic AI layer behind JUNE's legal case management platform. Designed and shipped production agents — Search Agent (MCP tool calling over MongoDB/Azure SQL), CaseFact Agent (automated case drafting with validation), and Compare Agent (LLM-powered document diff with legal significance assessment). Architected the Agentic Playground as a client-facing product and the platform's Guardrails Service. Full-stack across .NET, Angular, Python, and Azure.</p>
+        </div>
+
+        <div class="exp-block">
+            <h2>Software Engineer AI — Accounting Factory AbZ GmbH</h2>
+            <p class="exp-meta">Oct – Dec 2025</p>
+            <p>Built a fully on-premise agentic AI system for invoice processing. Self-hosted LLaMA 3.1 and Mistral via Ollama for data sovereignty. Covers document extraction, entity resolution via vector search, intelligent categorization, currency conversion, and accounting output — with an active learning pipeline that improves from human corrections.</p>
+        </div>
+
+        <div class="exp-block">
+            <h2>ML Research Assistant — University of Stuttgart</h2>
+            <p class="exp-meta">Aug 2023 – Mar 2025</p>
+            <p>Built RAG systems with dynamic retrieval, fine-tuned LLaMA 2 (LoRA), and developed a multi-agent system for technical drawing analysis. Deployed via AWS SageMaker and Bedrock. Consulted companies on LLM adoption.</p>
+        </div>
+
+        <div class="exp-block">
+            <h2>Computer Vision Engineer — Hitachi Rail</h2>
+            <p class="exp-meta">Working Student &middot; Feb 2024 – Jan 2025</p>
+            <p>Trained CV and Foundation Models for railway safety — object detection, segmentation, and Visual SLAM for autonomous trains. End-to-end MLOps for continuous monitoring.</p>
+        </div>
+    </div>
+
+    <!-- Projects -->
     <div class="page-content" id="projects-content">
         <h1>Projects</h1>
         
         <h2>AI Transportation Planning System</h2>
-        <p>A sophisticated multi-agent AI system that revolutionizes freight transport planning by analyzing historical projects and generating optimal solutions for new requests.</p>
-        <p><strong>Technologies:</strong> CrewAI, Machine Learning, OCR, NLP, FastAPI</p>
+        <p>Multi-agent system for freight transport planning — analyzes historical projects and generates optimal solutions.</p>
+        <p><strong>Stack:</strong> CrewAI, ML, OCR, NLP, FastAPI</p>
         <p><a href="https://github.com/meetraj19/AI_Transport_planner" class="btn" target="_blank">View Project</a></p>
         
-        <h2>AI Voice Chatbot System</h2>
-        <p>A production-ready AI voice chatbot designed for seamless phone call interactions with enterprise-grade reliability and natural conversation capabilities.</p>
-        <p><strong>Technologies:</strong> Twilio, Deepgram, OpenAI GPT-4, ElevenLabs, WebSocket</p>
+        <h2>AI Voice Chatbot</h2>
+        <p>Production-ready voice chatbot for real-time phone call interactions.</p>
+        <p><strong>Stack:</strong> Twilio, Deepgram, GPT-4, ElevenLabs, WebSocket</p>
         <p><a href="https://github.com/meetraj19/Voice_ChatbotMJ" class="btn" target="_blank">View Project</a></p>
         
         <h2>Advanced RAG System</h2>
-        <p>A comprehensive RAG system that spans from data ingestion to context-optimized response generation, built during research at IKTD - University of Stuttgart.</p>
-        <p><strong>Technologies:</strong> LangChain, Vector Databases, Custom Embeddings, Dynamic Retrieval</p>
+        <p>End-to-end RAG pipeline with context-optimized retrieval and dynamic retriever strategies.</p>
+        <p><strong>Stack:</strong> LangChain, Vector Databases, Custom Embeddings</p>
     </div>
 
-    <!-- Experience Page -->
-    <div class="page-content" id="experience-content">
-        <h1>Experience</h1>
-        
-        <h2>Machine Learning Research Assistant</h2>
-        <p><strong>IKTD - University of Stuttgart</strong> | Aug 2023 - Mar 2025</p>
-        <ul>
-            <li>Developed comprehensive RAG systems with state-of-the-art embeddings and dynamic retrieval strategies</li>
-            <li>Fine-tuned LLaMA 2 using LoRA techniques on custom institutional datasets</li>
-            <li>Built multi-agent AI systems for technical drawing analysis and feedback generation</li>
-            <li>Implemented MLOps practices with FastAPI and AWS SageMaker deployment</li>
-        </ul>
-        
-        <h2>Computer Vision Engineer (Working Student)</h2>
-        <p><strong>Hitachi Rail</strong> | Feb 2024 - Jan 2025</p>
-        <ul>
-            <li>Designed and trained computer vision models for railway safety systems</li>
-            <li>Developed foundation models for object detection and segmentation</li>
-            <li>Implemented Large Vision Models (LVM) for prompt-based object detection</li>
-            <li>Created end-to-end Visual SLAM pipelines for autonomous train systems</li>
-        </ul>
-    </div>
-
-    <!-- Posts Page -->
+    <!-- Posts -->
     <div class="page-content" id="posts-content">
         <h1>Blog Posts</h1>
-        <p>Here are some of my recent writings on AI, machine learning, and technology:</p>
-        
-        <h2>Recent Articles</h2>
+        <p>Writing about AI, machine learning, and autonomous systems:</p>
         <ul>
-            <li><a href="https://medium.com/@meetrajj19/imagebind-creating-a-unified-embedding-space-across-six-modalities-0bbb5e7b79d6" target="_blank">coherent associations across modalities</a></li>
-            <li><a href="https://medium.com/@meetrajj19/maskgwm-a-generalizable-driving-world-models-2e55146c31f0" target="_blank">fully AI-driven autonomous vehicles</a></li>
-            <li><a href="https://medium.com/@meetrajj19" target="_blank">More articles on Medium →</a></li>
+            <li><a href="https://medium.com/@meetrajj19/imagebind-creating-a-unified-embedding-space-across-six-modalities-0bbb5e7b79d6" target="_blank">ImageBind — Unified embedding space across six modalities</a></li>
+            <li><a href="https://medium.com/@meetrajj19/maskgwm-a-generalizable-driving-world-models-2e55146c31f0" target="_blank">MaskGWM — Generalizable driving world models</a></li>
+            <li><a href="https://medium.com/@meetrajj19" target="_blank">More on Medium →</a></li>
         </ul>
     </div>
 
-    <!-- CV Page -->
+    <!-- CV -->
     <div class="page-content" id="cv-content">
         <h1>Curriculum Vitae</h1>
-        <p>For a complete overview of my professional background, please download my CV or view it online.</p>
         <p><a href="https://onedrive.live.com/?id=%2Fpersonal%2F2a38559a17dfee7e%2FDocuments%2Fcv%5Fmeetrajje%2Epdf&parent=%2Fpersonal%2F2a38559a17dfee7e%2FDocuments" class="btn">Download CV (PDF)</a></p>
         
-        <h2>Quick Overview</h2>
-        <p><strong>Education:</strong> M.Sc. Mechatronics (University of Stuttgart), B.Sc. Mechanical Engineering</p>
-        <p><strong>Experience:</strong> 2+ years in Machine Learning and AI Research</p>
-        <p><strong>Specializations:</strong> LLMs, Computer Vision, Multi-Agent Systems, MLOps</p>
-        <p><strong>Languages:</strong> German (C1), English (Business Fluent)</p>
+        <h2>At a Glance</h2>
+        <p><strong>Current:</strong> AI Developer at JUNE GmbH, Munich</p>
+        <p><strong>Education:</strong> M.Sc. Mechatronics, University of Stuttgart (2022–2025)</p>
+        <p><strong>Stack:</strong> Python, .NET, Angular, LangGraph, Azure AI, AWS</p>
+        <p><strong>Languages:</strong> German (C1) · English (Business Fluent)</p>
     </div>
 
     <footer class="footer">
-        <p>© 2025 Meetrajsinh Jadeja. Powered by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a></p>
+        <p>&copy; 2026 Meetrajsinh Jadeja. Powered by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a></p>
     </footer>
 
     <script>
         function showPage(pageId) {
-            // Hide all content
             document.getElementById('home-content').style.display = 'none';
             const pages = document.querySelectorAll('.page-content');
             pages.forEach(page => page.classList.remove('active'));
             
-            // Show selected page
             const targetPage = document.getElementById(pageId + '-content');
             if (targetPage) {
                 targetPage.classList.add('active');
@@ -423,14 +422,12 @@
             const isDark = body.style.backgroundColor === 'rgb(26, 26, 26)' || body.style.backgroundColor === '#1a1a1a';
             
             if (isDark) {
-                // Switch to light theme
                 body.style.backgroundColor = '#fafafa';
                 body.style.color = '#333';
                 document.querySelector('.header').style.backgroundColor = '#fafafa';
                 document.querySelector('.footer').style.backgroundColor = '#fafafa';
-                document.querySelector('.theme-toggle').textContent = '🌙';
+                document.querySelector('.theme-toggle').textContent = '☀️';
             } else {
-                // Switch to dark theme
                 body.style.backgroundColor = '#1a1a1a';
                 body.style.color = '#e5e5e5';
                 document.querySelector('.header').style.backgroundColor = '#1a1a1a';
